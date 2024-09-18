@@ -1,0 +1,3 @@
+Updated BlogApp backend project after Part 7 can be found at:
+
+https://github.com/kat-ki/fsopen_part4

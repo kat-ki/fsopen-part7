@@ -1,4 +1,3 @@
-import React from 'react';
 import {Link} from "react-router-dom";
 import LoggedInUser from "./LoggedInUser.jsx";
 import {MenuMenu, MenuItem, Menu} from 'semantic-ui-react'
@@ -6,12 +5,12 @@ import {MenuMenu, MenuItem, Menu} from 'semantic-ui-react'
 const Header = () => {
 
     return (
-        <Menu pointing secondary>
+        <Menu pointing secondary fluid>
             <MenuItem>
-                <Link to="/">Blogs</Link>
+                <Link to="/" style={{fontSize: '18px'}}>Blogs</Link>
             </MenuItem>
             <MenuItem>
-                <Link to="/users">Users</Link>
+                <Link to="/users" style={{fontSize: '18px'}}>Users</Link>
             </MenuItem>
             <MenuMenu position='right'>
                 <MenuItem>

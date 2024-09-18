@@ -13,7 +13,6 @@ import {
     Card,
     Icon
 } from 'semantic-ui-react'
-import React from "react";
 
 const BlogCard = () => {
     const {blogId} = useParams();
@@ -25,6 +24,10 @@ const BlogCard = () => {
 
     if (!blog) {
         return <div>Blog not found</div>;
+    }
+
+    const handleGoBack = () => {
+        navigate('/');
     }
 
     const handleLike = () => {
@@ -54,8 +57,21 @@ const BlogCard = () => {
 
 
     return (
-        <main style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <Card style={{width: '500px'}}>
+        <main style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            margin: '10px'
+        }}>
+            <Card style={{width: '600px', padding: '10px'}}>
+                <Button
+                    content="<- Back"
+                    onClick={handleGoBack}
+                    color="linkedin"
+                    floated="right"
+                    style={{borderRadius: '5px', paddingBottom: '14px', width: '100px', marginBottom: '10px'}}
+                />
                 <CardContent>
                     <CardHeader>{blog.title}</CardHeader>
                     <CardMeta>By {blog.author}</CardMeta>
@@ -66,16 +82,19 @@ const BlogCard = () => {
                     </CardDescription>
                 </CardContent>
                 <CardContent extra>
-                    <div className='ui three buttons'>
+                    <div className='ui two buttons' style={{gap: '10px'}}>
                         <Button as='div' labelPosition='right'>
-                            <Button color='teal' onClick={handleLike}>
+                            <Button color='teal' onClick={handleLike} style={{borderRadius: '5px'}}>
                                 <Icon name='heart'/>
                                 {blog.likes} {blog.likes === 1 ? 'Like' : 'Likes'}
                             </Button>
                         </Button>
                         <Button as='div' labelPosition='right'>
                             {user.name === blog.user.name ?
-                                <Button type="button" content="Delete" negative
+                                <Button type="button"
+                                        content="Delete"
+                                        negative
+                                        style={{borderRadius: '5px'}}
                                         onClick={() => deleteBlog(blog)}/> : null}
                         </Button>
                     </div>

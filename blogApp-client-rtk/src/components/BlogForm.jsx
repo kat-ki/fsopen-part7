@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import {setNotification} from "../state/reducers/notificationSlice.js";
 import {createBlog} from "../state/reducers/blogsSlice.js";
 import {useDispatch} from "react-redux";
@@ -50,13 +49,14 @@ const BlogForm = () => {
     }
 
     return (
-        <div>
+        <main style={{display: 'flex', flexDirection: 'column'}}>
             <div>
-                <Button content="+ add new" onClick={() => setFormVisible(!formVisible)} color="teal"/>
+                <Button content="+ add new" onClick={() => setFormVisible(!formVisible)} color="teal"
+                        style={{marginLeft: '18px'}}/>
             </div>
             {formVisible &&
                 (
-                    <Form onSubmit={addBlog}>
+                    <Form onSubmit={addBlog} style={{margin: '16px'}}>
                         <FormField>
                             <label>Title</label>
                             <input type="text"
@@ -78,12 +78,21 @@ const BlogForm = () => {
                                    value={url}
                                    onChange={({target}) => setUrl(target.value)}/>
                         </FormField>
-                        <Button type='submit' content="Submit" color="teal"/>
-                        <Button type="button" content="Cancel" negative onClick={() => setFormVisible(false)}/>
+                        <div style={{margin: '0 40px 0 40px'}}>
+                            <Button type='submit'
+                                    content="Submit"
+                                    color="teal"
+                                    floated='left'/>
+                            <Button type="button"
+                                    content="Cancel"
+                                    floated='right'
+                                    negative
+                                    onClick={() => setFormVisible(false)}/>
+                        </div>
                     </Form>
                 )
             }
-        </div>
+        </main>
     )
 }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {selectAllBlogs, sortBlogs} from "../state/reducers/blogsSlice.js";
@@ -12,7 +11,7 @@ const BlogList = () => {
     }
 
     return (
-        <div>
+        <main style={{margin: '10px'}}>
             <Header onClick={showPopular}
                     as='h4'
                     textAlign='center'
@@ -25,13 +24,13 @@ const BlogList = () => {
             </Header>
             {blogs.map(blog =>
                 <Link key={blog.id} to={`/blogs/${blog.id}`}>
-                    <Segment>
+                    <Segment style={{margin: '8px'}}>
                         <Header as="h4">{blog.title}</Header>
                         <p>By <b>{blog.author}</b></p>
                     </Segment>
                 </Link>
             )}
-        </div>
+        </main>
     );
 };
 

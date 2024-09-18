@@ -1,11 +1,8 @@
-import React from 'react';
 import CommentForm from "./CommentForm.jsx";
 import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {selectSingleBlog} from "../state/reducers/blogsSlice.js";
-import {
-    Header
-} from "semantic-ui-react";
+import {Header} from "semantic-ui-react";
 
 const Comments = () => {
     const {blogId} = useParams();
@@ -17,7 +14,7 @@ const Comments = () => {
 
     return (
         <div>
-            <Header as='h4' dividing>
+            <Header as='h4' dividing textAlign="left" style={{padding: '14px',}}>
                 Comments
             </Header>
             <ul>

@@ -1,7 +1,7 @@
-import React from 'react';
 import {Link, useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {selectSingleUser} from "../state/reducers/usersSlice.js";
+import {Header} from "semantic-ui-react";
 
 
 const User = () => {
@@ -14,12 +14,12 @@ const User = () => {
 
     return (
         <main style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <h2><u>{user.name}</u></h2>
-            <h3>Added blogs</h3>
+            <Header as="h2">{user.name}</Header>
+            <Header as="h3">Added blogs</Header>
             <ul>
                 {user.blogs.map(blog => (
                     <li key={blog.id}>
-                        <Link to={`/blogs/${blog.id}`}> {blog.title}</Link>
+                        <Link to={`/blogs/${blog.id}`} style={{fontSize: '16px'}}> {blog.title}</Link>
                     </li>
                 ))}
             </ul>

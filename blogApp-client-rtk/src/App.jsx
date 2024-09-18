@@ -1,4 +1,3 @@
-import React from 'react';
 import Notification from './components/Notification.jsx'
 import BlogForm from './components/BlogForm.jsx'
 import BlogList from "./components/BlogList.jsx";
