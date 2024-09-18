@@ -16,10 +16,16 @@ const Users = () => {
     const users = useSelector(selectAllUsers);
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            margin: '0 20px'
+        }}>
             <Header as="h2">Users</Header>
 
-            <Table basic='very' celled collapsing size="small" style={{width: '90%'}}>
+            <Table basic='very' size="small" style={{width: '90%'}}>
                 <TableHeader>
                     <TableRow>
                         <TableHeaderCell style={{fontSize: '16px'}}>Author</TableHeaderCell>

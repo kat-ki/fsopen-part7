@@ -1,6 +1,7 @@
 import {useDispatch} from "react-redux";
 import {addComment} from "../state/reducers/blogsSlice.js";
 import {FormField, Button, Form} from 'semantic-ui-react'
+import {useState} from "react";
 
 const CommentForm = ({blogId}) => {
     const dispatch = useDispatch();

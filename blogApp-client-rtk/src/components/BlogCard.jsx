@@ -27,7 +27,7 @@ const BlogCard = () => {
     }
 
     const handleGoBack = () => {
-        navigate('/');
+        navigate(-1);
     }
 
     const handleLike = () => {

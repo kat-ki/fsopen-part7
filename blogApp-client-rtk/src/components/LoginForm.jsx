@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import loginService from "../services/login.js";
 import blogService from "../services/blogs.js";
 import {setUser} from "../state/reducers/authSlice.js";
@@ -6,6 +5,7 @@ import {setNotification} from "../state/reducers/notificationSlice.js";
 import {useDispatch} from "react-redux";
 import {setStatus} from "../state/reducers/statusSlice.js";
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
+import {useState} from "react";
 
 const LoginForm = () => {
     const dispatch = useDispatch();
