@@ -22,16 +22,22 @@ const User = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'stretch',
+            alignItems: 'center',
             margin: '14px'
         }}>
-            <Button
-                content="<- Back"
-                onClick={handleGoBack}
-                color="linkedin"
-                floated="left"
-                style={{borderRadius: '5px', paddingBottom: '14px', width: '100px'}}
-            />
+            <div style={{
+                display: 'flex',
+                justifyContent: 'flex-start', width: '90%'
+            }}>
+                <Button
+                    content="<- Back"
+                    onClick={handleGoBack}
+                    color="linkedin"
+                    floated="left"
+                    style={{borderRadius: '5px', paddingBottom: '14px', width: '100px'}}
+                />
+            </div>
+
             <Header as="h2" textAlign="center">{user.name}</Header>
             <Header as="h3" textAlign="center">Added blogs</Header>
             <ul>
