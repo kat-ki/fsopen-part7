@@ -17,9 +17,10 @@ import {
 const BlogCard = () => {
     const {blogId} = useParams();
     const user = useSelector(state => state.authUser.user);
-    const dispatch = useDispatch();
     const blog = useSelector(state => selectSingleBlog(state, blogId));
+    const blogAddedByUser = useSelector(state => state.users.find(u => u.id === blog.user));
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     if (!blog) {
@@ -78,7 +79,7 @@ const BlogCard = () => {
                     <CardMeta>{blog.url}</CardMeta>
 
                     <CardDescription textAlign="right">
-                        Added by <b>{blog.user.name}</b>
+                        Added by <b>{blog.user.name || blogAddedByUser?.name}</b>
                     </CardDescription>
                 </CardContent>
                 <CardContent extra>
@@ -90,7 +91,7 @@ const BlogCard = () => {
                             </Button>
                         </Button>
                         <Button as='div' labelPosition='right'>
-                            {user.name === blog.user.name ?
+                            {user.name === (blog.user.name || blogAddedByUser?.name) ?
                                 <Button type="button"
                                         content="Delete"
                                         negative
