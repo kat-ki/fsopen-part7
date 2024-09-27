@@ -48,6 +48,12 @@ const BlogForm = () => {
             setUrl('')
         }
     }
+    const handleCancel = () => {
+        setTitle('');
+        setAuthor('');
+        setUrl('');
+        setFormVisible(false);
+    }
 
     return (
         <main style={{display: 'flex', flexDirection: 'column'}}>
@@ -88,7 +94,7 @@ const BlogForm = () => {
                                     content="Cancel"
                                     floated='right'
                                     negative
-                                    onClick={() => setFormVisible(false)}/>
+                                    onClick={handleCancel}/>
                         </div>
                     </Form>
                 )

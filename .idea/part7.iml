@@ -5,6 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/anecdotes-react-router/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/blogApp-client-rtk/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/countries/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
